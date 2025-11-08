@@ -279,4 +279,8 @@ with gr.Blocks() as demo:
     )
 
 if __name__ == "__main__":
-    demo.queue().launch(mcp_server=True)
+    demo.queue().launch(
+    server_name="0.0.0.0",  # listen on all interfaces
+    server_port=7860,        # or any free port
+    share=False              # optional, don't need Gradio public link
+)
