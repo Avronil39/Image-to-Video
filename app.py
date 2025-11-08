@@ -73,7 +73,7 @@ aoti.aoti_blocks_load(pipe.transformer_2, 'zerogpu-aoti/Wan2', variant='fp8da')
 
 
 default_prompt_i2v = "make this image come alive, cinematic motion, smooth animation"
-default_negative_prompt = "色调艳丽, 过曝, 静态, 细节模糊不清, 字幕, 风格, 作品, 画作, 画面, 静止, 整体发灰, 最差质量, 低质量, JPEG压缩残留, 丑陋的, 残缺的, 多余的手指, 画得不好的手部, 画得不好的脸部, 畸形的, 毁容的, 形态畸形的肢体, 手指融合, 静止不动的画面, 杂乱的背景, 三条腿, 背景人很多, 倒着走"
+default_negative_prompt = "overly saturated, overexposed, static, blurry details, subtitles, style, artwork, painting, still image, overall gray, worst quality, low quality, JPEG artifacts, ugly, incomplete, extra fingers, poorly drawn hands, poorly drawn face, deformed, disfigured, malformed limbs, fused fingers, motionless scene, messy background, three legs, too many people in background, walking upside down"
 
 def resize_image(image: Image.Image) -> Image.Image:
     """
@@ -230,7 +230,8 @@ def generate_video(
 
 with gr.Blocks() as demo:
     gr.Markdown("# Fast 4 steps Wan 2.2 I2V (14B) with Lightning LoRA")
-    gr.Markdown("run Wan 2.2 in just 4-8 steps, with [Lightning LoRA](https://huggingface.co/Kijai/WanVideo_comfy/tree/main/Wan22-Lightning), fp8 quantization & AoT compilation - compatible with 🧨 diffusers and ZeroGPU⚡️")
+    # gr.Markdown("run Wan 2.2 in just 4-8 steps, with [Lightning LoRA](https://huggingface.co/Kijai/WanVideo_comfy/tree/main/Wan22-Lightning), fp8 quantization & AoT compilation - compatible with 🧨 diffusers and ZeroGPU⚡️")
+    gr.Markdown("Made with love by ~Avronil")
     with gr.Row():
         with gr.Column():
             input_image_component = gr.Image(type="pil", label="Input Image")
